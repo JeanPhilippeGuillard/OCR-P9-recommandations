@@ -1,0 +1,76 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "matrix1",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "trained-model/user_vecs.npy",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "matrix2",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "trained-model/item_vecs.npy",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "matrix3",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "trained-model/users_arr.npy",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "matrix4",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "trained-model/items_arr.npy",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "matrix5",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "trained-model/clicks_sparse.npz",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "matrix6",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "trained-model/user_to_sparse_user.pkl",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "matrix7",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "trained-model/sparse_item_to_item.pkl",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
